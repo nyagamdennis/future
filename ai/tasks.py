@@ -7,9 +7,6 @@ import holidays
 import time
 import requests
 import os
-from dotenv import load_dotenv
-
-load_dotenv()  # Load from .env
 
 
 def make_holidays_df(years):
@@ -84,7 +81,7 @@ def retrain_prophet_model(customer_id, sales_data):
     except Exception as e:
         print(f"Error while training for customer {customer_id}: {e}")
 
-        
+
 # @shared_task
 # def retrain_prophet_model(customer_id, sales_data):
 #     print('Training models')
