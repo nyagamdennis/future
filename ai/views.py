@@ -6,7 +6,6 @@ from .tasks import retrain_prophet_model
 
 class TriggerProphetTrainingView(APIView):
     def post(self, request):
-        print('training data ', request.data)
         try:
             customer_id = request.data["customer_id"]
             sales_data = request.data["sales_data"]

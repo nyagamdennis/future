@@ -8,7 +8,7 @@ import time
 import requests
 import os
 
-
+ai_url = 'https://murildennis.pythonanywhere.com/sales_ai/pass-data/'
 def make_holidays_df(years):
     ke_holidays = holidays.Kenya(years=years)
     return pd.DataFrame([
@@ -21,7 +21,8 @@ def make_holidays_df(years):
 # @shared_task
 def retrain_prophet_model(customer_id, sales_data):
     print('training session')
-    request_url = os.getenv("AI_URL")
+    # request_url = os.getenv("AI_URL")
+    request_url = ai_url
 
     try:
         if len(sales_data) < 3:
